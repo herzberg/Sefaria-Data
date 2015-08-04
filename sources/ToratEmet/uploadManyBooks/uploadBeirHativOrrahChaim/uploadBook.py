@@ -14,7 +14,7 @@ def postBook(title, filename):
 		"versionSource":  "http://www.toratemetfreeware.com/index.html?downloads",
 		"language": "he",	
 	}
-	actuallyPost = True; # False=> outputting file; True=> post to site
+	actuallyPost = False; # False=> outputting file; True=> post to site
 	useRealSite = False; # False=> dev site; True=> real site
 	postBookIndex = True; #do False for old book in their DB, and do True for new book.
 	symbolAtLevel = ['~', '!'] #put symbols where 'NL' means that NL is the lowest level. COMMON symbols: [ '~','^', '@', '$', '!', '#'] that start a new Chapter/Paragraph/etc in ToratEmet

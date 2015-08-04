@@ -1,54 +1,3 @@
-﻿from postFile2 import *
-
-def postBook(title, filename):
-	index = {
-	"title": title,
-	"titleVariants": ["Beer Hetev on Shulchan Arukh, Even HaEzer", "Be'ir Hetev on Shulchan Arukh, Even HaEzer", "Ba'er Hetev on Shulchan Arukh, Even HaEzer","Beir Hetev on Shulchan Arukh, Even HaEzer", "Baer Hetev on Shulchan Arukh, Even HaEzer" ],
-	"heTitle" : "באר היטב אבן העזר",
-	"heTitleVariants" : [],
-	"sectionNames": ["Siman" , "Se'if Katan"], 
-	"categories": ["Halakhah", "Shulchan Arukh"],
-	}
-	textIndex = {
-		"versionTitle": "Torat Emet 357",
-		"versionSource":  "http://www.toratemetfreeware.com/index.html?downloads",
-		"language": "he",	
-	}
-	actuallyPost = True; # False=> outputting file; True=> post to site
-	useRealSite = True; # False=> dev site; True=> real site
-	postBookIndex = True; #do False for old book in their DB, and do True for new book.
-	symbolAtLevel = ['~', '!'] #put symbols where 'NL' means that NL is the lowest level. COMMON symbols: [ '~','^', '@', '$', '!', '#'] that start a new Chapter/Paragraph/etc in ToratEmet
-	displayHeaderSymbols = []	# Put symbols (but not NL) that you want to display header into displayHeaderSymbol with bigger first. ex. displayHeaderSymbol = [ '@', '~']	
-	createHeader = ['~'] #these are the headers for which you want to create a headers.csv with
-	headerAttr = [[1,1]] # put in the attributes for the headers in the format: [displayNum , displayLevelType (ex. daf)] . ex. if using 2 header syms = [[1,0], [0,0]]
-	useAsNumberForLocation = ['!'] #typically used for commentary (usually ['!']), where not every line is there but there is only a commentary on some lines.
-	postSifKatans = True # if you want to post Sif Katans (which are contained within a line of TE)
-	commentary = True #if this is a commentary on something make it true. <book title> on <thing it's a comment on> is assumed to be the title of this book
-	postFile2(filename, index, textIndex,symbolAtLevel, actuallyPost, useRealSite,postBookIndex, displayHeaderSymbols, createHeader, headerAttr, useAsNumberForLocation, postSifKatans, commentary)
-	
-
-	
-
-title = "Be'er Hetev on Shulchan Arukh, Even HaEzer";
-filename = "052_באר_היטב_אבן_העזר.txt";
-postBook(title, filename)
-
-"""
-Comments/Changes/Problems:
-
-134 had a mistake on 134.2 divide. So I renumbered things.
-
-It has 2 non-numbered simanim
-
-(between 154 and 155:) 
-So I removed line ~ סדר הגט ובו דיני העדים והבעל והסופר והאשה, וכל פרטיו, {{ובו ק''א סעיפים}}
-
-and also by 3417 ish I changed the numbering of a whole section that doesn't rigidly fit into the structure.
-
-(between 169 and 170) 
-
-~ סדר חליצה בקצרה, {{ובו נ''ז סעיפים }} 
-
 ! א 
 {{{{א}}}} [[להקרות. ]] ואפילו שאין רב מומחה עליהם: {{{{ב}}}} [[נוהגין וכו'. ]] אבל בדיעבד אפי' חלצה בפני עמי הארץ חליצתה כשרה. פוסקים: {{{{ג}}}} [[סומים. ]] אם הדיינים שאצל החליצה אינם יכולים לראות כ''א ע''י בתי עינים שקורין ברי''ל בל''א כשרים הם דלא הוי כסומין שבות יעקב ח''א שאלה קכ''ו. וכ''כ בתשובת דבר שמואל:  
 
@@ -115,7 +64,7 @@ and also by 3417 ish I changed the numbering of a whole section that doesn't rig
 ! לב 
 {{{{ל}}}} [[קודם. ]] והאידנא נהגו בין נשבע בין לא נשבע מתירין לו י''א דיש להתיר חר''ג לישא ב' נשים. ובמקומותינו לא נהגו כן. עיין בפירוש ס''ח סעיף מ''ו:  
 
-! ד 
+! לד 
 {{{{לא}}}} [[פסולה. ]] שלא תצטרך אח''כ לחלוץ מכל האחין:  
 
 ! לו 
@@ -159,7 +108,3 @@ and also by 3417 ish I changed the numbering of a whole section that doesn't rig
 
 ! נז 
 {{{{מז}}}} [[כן. ]] כתב מהר''י מרגלית דאנו אין נוהגין לכתוב גט חליצה מאחר שחולצת ברבים אינה צריכה לשטר ראיה:    
-
-
-
-"""
